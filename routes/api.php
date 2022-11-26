@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TestControler;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\FileUploadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,5 @@ Route::put('/blog-update', [BlogController::class,'updateBlog']);
 
 Route::delete('/delete-blog/{id}', [BlogController::class,'deleteBlog']);
 Route::get('/search-data/{param}', [BlogController::class,'searchBlogByName']);
+Route::post('/save-valid-blog', [BlogController::class,'validateData']);
+Route::post('/file-upload', [FileUploadController::class,'fileUpload']);
